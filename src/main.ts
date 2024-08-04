@@ -1,5 +1,7 @@
 import './style.css'
 import { homePage } from './pages/home.ts';
+import { loginPage } from './pages/login.ts';
+
 
 function router() {
   let path = window.location.hash
@@ -7,7 +9,7 @@ function router() {
   if (!path) {
     homePage();
   } else if (path === "#login") {
-    // login
+    loginPage();
   } else if (path === "#register") {
     // register
   } else {
