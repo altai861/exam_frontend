@@ -1,7 +1,8 @@
 import './style.css'
 import { homePage } from './pages/home.ts';
 import { loginPage } from './pages/login.ts';
-
+import { registerPage } from './pages/register.ts';
+import { NotFoundPage } from './pages/404.ts';
 
 function router() {
   let path = window.location.hash
@@ -11,9 +12,9 @@ function router() {
   } else if (path === "#login") {
     loginPage();
   } else if (path === "#register") {
-    // register
+    registerPage();
   } else {
-    // 404
+    NotFoundPage();
   }
 }
 

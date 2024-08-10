@@ -11,6 +11,7 @@ export async function loginPage() {
                 <input type="password" placeholder="Password" required id="password"></input>
                 <input type="submit" value="Login"></input>
             </form>
+            <p>Don't have an account? <a href='/#register'>register</a></p>
         `
 
         const loginForm = document.getElementById("login-form");
