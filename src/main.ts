@@ -3,6 +3,7 @@ import { homePage } from './pages/home.ts';
 import { loginPage } from './pages/login.ts';
 import { registerPage } from './pages/register.ts';
 import { NotFoundPage } from './pages/404.ts';
+import { examPage } from './pages/exam.ts';
 
 function router() {
   let path = window.location.hash
@@ -13,6 +14,9 @@ function router() {
     loginPage();
   } else if (path === "#register") {
     registerPage();
+  } else if (path.startsWith("#exams")) {
+    let pathStrings = path.split("#");
+    examPage(pathStrings[pathStrings.length - 1]);
   } else {
     NotFoundPage();
   }

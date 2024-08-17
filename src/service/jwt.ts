@@ -1,4 +1,4 @@
-const url = "http://localhost:3500"
+import url from "../config/url.ts";
 
 export async function checkAccessToken(accessToken: string): Promise<boolean> {
     try {

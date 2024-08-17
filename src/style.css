@@ -1,5 +1,26 @@
 body {
-    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    font-family:Arial, Helvetica, sans-serif
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(167, 167, 167);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#navbar-right-side {
+    display: flex;
+    align-items: center;
+}
+
+#logout-button {
+    margin-left: 10px;
+    height: 50%;
 }
 
 #login-form {
@@ -11,4 +32,17 @@ body {
 
 #login-form input {
     margin: 5px;
+}
+
+
+.exam {
+    border: 2px solid grey;
+    border-radius: 15px;
+    margin: 20px;
+    padding: 20px;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.exam:hover {
+    background-color: antiquewhite;
 }

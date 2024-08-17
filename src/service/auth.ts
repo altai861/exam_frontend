@@ -1,4 +1,4 @@
-const url = "http://localhost:3500";
+import url from "../config/url.ts";
 
 export async function login(username: string, password: string) {
     const myHeaders = new Headers();
@@ -16,6 +16,7 @@ export async function login(username: string, password: string) {
         console.log("Login successful:", data);
 
         localStorage.setItem("accessToken", data.accessToken);
+        localStorage.setItem("username", data.username);
         window.location.href = "/"
 
     } else {
