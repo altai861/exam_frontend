@@ -29,13 +29,16 @@ export async function homePage() {
 
             let examsHTML = ""
 
-            exams.forEach((exam: { name: any; _id: any}) => {
+            exams.forEach((exam: {
+                username: string | null; name: any; _id: any
+}) => {
                 examsHTML += `
-                    <a href="#exams#${exam._id}">
-                        <div class='exam' id='${exam._id}'>
-                            <h3>${exam.name}</h3>
+                    
+                        <div class='exam ${exam.username === username ? 'mine' : ''}' id='${exam._id}'>
+                            <a href="#exams#${exam._id}"><h3>${exam.name}</h3></a>
+                            ${exam.username === username ? "<button class='delete-button'>Delete</button>" : ''}
                         </div>
-                    </a>
+                    
                 `
             })
 
@@ -43,6 +46,9 @@ export async function homePage() {
                 <div id="navbar">
                     <div>
                         <h1>Exam</h1>
+                    </div>
+                    <div>
+                        <a href='#add-exam'><button>Add Exam</button></a>
                     </div>
                     <div id="navbar-right-side">
                         <h2>${username}</h2>
@@ -53,6 +59,15 @@ export async function homePage() {
                     ${examsHTML}
                 <div>
             `
+
+            const deleteButtons = document.querySelectorAll(".delete-button");
+
+            deleteButtons?.forEach((button: any) => {
+                button.addEventListener("click", async () => {
+                    const examId = button.closest('.exam').id
+                    console.log(examId);
+                })
+            })
 
             const logoutButton = document.getElementById("logout-button");
             logoutButton?.addEventListener("click", () => {

@@ -41,8 +41,15 @@ body {
     margin: 20px;
     padding: 20px;
     transition: background-color 0.1s ease-in-out;
+    display: flex;
+    justify-content: space-between;
 }
 
 .exam:hover {
     background-color: antiquewhite;
+}
+
+
+.mine {
+    background-color: rgb(116, 191, 116);
 }
